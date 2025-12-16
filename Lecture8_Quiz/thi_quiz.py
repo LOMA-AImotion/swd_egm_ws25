@@ -10,9 +10,15 @@ Created on Tue Nov 23 22:27:53 2021
 @author: Lukas Lodes, Alexander Schiendorfer
 """
 
-import thi_quiz_data_gaps as data
-import thi_quiz_gui_gaps as gui
+import thi_quiz_data as data
+import thi_quiz_gui as gui
 
-# idea: here we actually assemble the individual parts of our program
-# this allows us to easily swap out parts of the program
+# all_questions = data.load_questions_from_file("quiz_functions.txt")
+all_questions = data.load_questions_from_file("Your/path/here")
+# the gui expects a variable
+#   all_questions -> a list 
+gui.all_questions = all_questions
+gui.get_next_question = data.get_random_question_from_complete_list
 
+gui.draw_gui()
+gui.main_window.mainloop()
