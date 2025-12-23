@@ -1,0 +1,26 @@
+class Person:
+  def __init__(self, name):
+        self.name = name
+
+  def greet(self):
+        print(f"***** Hi, my name is {self.name}")
+
+class Student(Person):
+    def __init__(self, name, matriculation_id):
+        super().__init__(name)
+        self.matriculation_id = matriculation_id
+    
+    def greet(self):
+        print(f"***** Hi, my name is {self.name} and my matriculation number is {self.matriculation_id}")
+    
+p = Person("Caroline")
+p.greet()
+
+s = Student("Francis", 14483)
+s.greet()
+
+all_persons = [p, s]
+
+for person in all_persons:
+    person.greet()
+
